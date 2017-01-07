@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        DDLogError("APP EVENT: willEnterBackground")
+        DDLogError("APP EVENT: willEnterForeground")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
