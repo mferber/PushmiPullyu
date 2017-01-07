@@ -16,6 +16,8 @@
 		3952F0B81E2068EF006F8A91 /* PushmiPullyuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0B71E2068EF006F8A91 /* PushmiPullyuUITests.swift */; };
 		3952F0C61E20758E006F8A91 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */; };
 		3952F0C71E20758E006F8A91 /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3952F0D21E208449006F8A91 /* MainLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0D11E208449006F8A91 /* MainLogger.swift */; };
+		3952F0D41E20864B006F8A91 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0D31E20864B006F8A91 /* LoggerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		3952F0CA1E2075BC006F8A91 /* CocoaLumberjackSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjackSwift.framework.dSYM; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework.dSYM; sourceTree = "<group>"; };
 		3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		3952F0D11E208449006F8A91 /* MainLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLogger.swift; sourceTree = "<group>"; };
+		3952F0D31E20864B006F8A91 /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			children = (
 				3952F0971E2068EF006F8A91 /* AppDelegate.swift */,
 				3952F0991E2068EF006F8A91 /* ViewController.swift */,
+				3952F0D01E208398006F8A91 /* Logging */,
 				3952F09B1E2068EF006F8A91 /* Main.storyboard */,
 				3952F09E1E2068EF006F8A91 /* Assets.xcassets */,
 				3952F0A01E2068EF006F8A91 /* LaunchScreen.storyboard */,
@@ -154,6 +159,15 @@
 				3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3952F0D01E208398006F8A91 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				3952F0D11E208449006F8A91 /* MainLogger.swift */,
+				3952F0D31E20864B006F8A91 /* LoggerManager.swift */,
+			);
+			name = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3952F0D21E208449006F8A91 /* MainLogger.swift in Sources */,
+				3952F0D41E20864B006F8A91 /* LoggerManager.swift in Sources */,
 				3952F09A1E2068EF006F8A91 /* ViewController.swift in Sources */,
 				3952F0981E2068EF006F8A91 /* AppDelegate.swift in Sources */,
 			);
