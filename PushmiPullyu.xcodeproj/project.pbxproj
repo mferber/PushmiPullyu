@@ -97,13 +97,11 @@
 		3952F08B1E2068EF006F8A91 = {
 			isa = PBXGroup;
 			children = (
-				3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */,
-				3952F0CA1E2075BC006F8A91 /* CocoaLumberjackSwift.framework.dSYM */,
-				3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */,
 				3952F0961E2068EF006F8A91 /* PushmiPullyu */,
 				3952F0AB1E2068EF006F8A91 /* PushmiPullyuTests */,
 				3952F0B61E2068EF006F8A91 /* PushmiPullyuUITests */,
 				3952F0951E2068EF006F8A91 /* Products */,
+				3952F0CF1E2082AA006F8A91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +144,16 @@
 				3952F0B91E2068EF006F8A91 /* Info.plist */,
 			);
 			path = PushmiPullyuUITests;
+			sourceTree = "<group>";
+		};
+		3952F0CF1E2082AA006F8A91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */,
+				3952F0CA1E2075BC006F8A91 /* CocoaLumberjackSwift.framework.dSYM */,
+				3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
