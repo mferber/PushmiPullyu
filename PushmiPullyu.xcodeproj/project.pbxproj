@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3952F0981E2068EF006F8A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0971E2068EF006F8A91 /* AppDelegate.swift */; };
-		3952F09A1E2068EF006F8A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0991E2068EF006F8A91 /* ViewController.swift */; };
+		3952F09A1E2068EF006F8A91 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0991E2068EF006F8A91 /* LogViewController.swift */; };
 		3952F09D1E2068EF006F8A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3952F09B1E2068EF006F8A91 /* Main.storyboard */; };
 		3952F09F1E2068EF006F8A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3952F09E1E2068EF006F8A91 /* Assets.xcassets */; };
 		3952F0A21E2068EF006F8A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3952F0A01E2068EF006F8A91 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		3952F0C71E20758E006F8A91 /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3952F0D21E208449006F8A91 /* MainLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0D11E208449006F8A91 /* MainLogger.swift */; };
 		3952F0D41E20864B006F8A91 /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0D31E20864B006F8A91 /* LoggerManager.swift */; };
+		3952F0D61E218C7E006F8A91 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0D51E218C7E006F8A91 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,7 @@
 /* Begin PBXFileReference section */
 		3952F0941E2068EF006F8A91 /* PushmiPullyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushmiPullyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3952F0971E2068EF006F8A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3952F0991E2068EF006F8A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3952F0991E2068EF006F8A91 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		3952F09C1E2068EF006F8A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3952F09E1E2068EF006F8A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3952F0A11E2068EF006F8A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		3952F0D11E208449006F8A91 /* MainLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLogger.swift; sourceTree = "<group>"; };
 		3952F0D31E20864B006F8A91 /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
+		3952F0D51E218C7E006F8A91 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +124,11 @@
 		3952F0961E2068EF006F8A91 /* PushmiPullyu */ = {
 			isa = PBXGroup;
 			children = (
-				3952F0971E2068EF006F8A91 /* AppDelegate.swift */,
-				3952F0991E2068EF006F8A91 /* ViewController.swift */,
-				3952F0D01E208398006F8A91 /* Logging */,
 				3952F09B1E2068EF006F8A91 /* Main.storyboard */,
+				3952F0971E2068EF006F8A91 /* AppDelegate.swift */,
+				3952F0991E2068EF006F8A91 /* LogViewController.swift */,
+				3952F0D51E218C7E006F8A91 /* MainView.swift */,
+				3952F0D01E208398006F8A91 /* Logging */,
 				3952F09E1E2068EF006F8A91 /* Assets.xcassets */,
 				3952F0A01E2068EF006F8A91 /* LaunchScreen.storyboard */,
 				3952F0A31E2068EF006F8A91 /* Info.plist */,
@@ -329,7 +332,8 @@
 			files = (
 				3952F0D21E208449006F8A91 /* MainLogger.swift in Sources */,
 				3952F0D41E20864B006F8A91 /* LoggerManager.swift in Sources */,
-				3952F09A1E2068EF006F8A91 /* ViewController.swift in Sources */,
+				3952F09A1E2068EF006F8A91 /* LogViewController.swift in Sources */,
+				3952F0D61E218C7E006F8A91 /* MainView.swift in Sources */,
 				3952F0981E2068EF006F8A91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

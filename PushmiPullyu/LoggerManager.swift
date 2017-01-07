@@ -9,7 +9,7 @@
 import CocoaLumberjack
 
 class LoggerManager {
-    var mainLogger: DDLogger?
+    var mainLogger: MainLogger?
     
     init() {
         self.mainLogger = MainLogger()

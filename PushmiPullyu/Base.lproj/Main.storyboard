@@ -1,26 +1,85 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Log View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LogViewController" customModule="PushmiPullyu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="PushmiPullyu" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushmipullyu-illustration" translatesAutoresizingMaskIntoConstraints="NO" id="xQ1-nh-gpb">
+                                <rect key="frame" x="16" y="22" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xQ1-nh-gpb" secondAttribute="height" multiplier="1:1" id="T4T-De-Bck"/>
+                                    <constraint firstAttribute="width" constant="100" id="lSG-AF-Xj0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushmi-Pullyu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-aq-2ZG">
+                                <rect key="frame" x="126" y="22" width="166.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notification test bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-pQ-qet">
+                                <rect key="frame" x="126" y="49.5" width="195.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7r-N1-yeu">
+                                <rect key="frame" x="126" y="92" width="88" height="30"/>
+                                <state key="normal" title="Clear the log"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Dummy test here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-4b-EU7">
+                                <rect key="frame" x="16" y="132" width="343" height="533"/>
+                                <color key="backgroundColor" white="0.955078125" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="xQ1-nh-gpb" secondAttribute="leading" id="06P-cs-Ufg"/>
+                            <constraint firstItem="b5j-pQ-qet" firstAttribute="leading" secondItem="2ff-aq-2ZG" secondAttribute="leading" id="4RW-5W-9ZX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="EJ7-e5-zRD"/>
+                            <constraint firstItem="w7r-N1-yeu" firstAttribute="bottom" secondItem="xQ1-nh-gpb" secondAttribute="bottom" id="EPH-2L-RCY"/>
+                            <constraint firstItem="w7r-N1-yeu" firstAttribute="leading" secondItem="2ff-aq-2ZG" secondAttribute="leading" id="NH6-6n-vc7"/>
+                            <constraint firstItem="2ff-aq-2ZG" firstAttribute="top" secondItem="xQ1-nh-gpb" secondAttribute="top" id="SFy-NG-xZS"/>
+                            <constraint firstItem="TVb-4b-EU7" firstAttribute="top" secondItem="xQ1-nh-gpb" secondAttribute="bottom" constant="10" id="TVJ-3q-nTC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVb-4b-EU7" secondAttribute="bottom" constant="2" id="VaW-vF-Mvr"/>
+                            <constraint firstItem="2ff-aq-2ZG" firstAttribute="leading" secondItem="xQ1-nh-gpb" secondAttribute="trailing" constant="10" id="YmO-dh-hZw"/>
+                            <constraint firstItem="b5j-pQ-qet" firstAttribute="top" secondItem="2ff-aq-2ZG" secondAttribute="bottom" id="qRI-Ye-O00"/>
+                            <constraint firstItem="xQ1-nh-gpb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="yoB-fc-mL1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TVb-4b-EU7" secondAttribute="leading" id="zYR-s2-42r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="w7r-N1-yeu" id="T8s-QT-89L"/>
+                        <outlet property="textView" destination="TVb-4b-EU7" id="WZL-Dz-5dU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pushmipullyu-illustration" width="250" height="249"/>
+    </resources>
 </document>

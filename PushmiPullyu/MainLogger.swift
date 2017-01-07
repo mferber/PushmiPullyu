@@ -21,6 +21,10 @@ class MainLogger: DDFileLogger {
         return self.logFileManager.logsDirectory
     }
     
+    public var logPath: String {
+        return (self.logDirectory as NSString).appendingPathComponent(MainLogger.filename)
+    }
+    
     init() {
         super.init(logFileManager: SingleLogCacheFileManager(filename: MainLogger.filename))
         
@@ -43,7 +47,7 @@ private class SingleLogCacheFileManager: DDLogFileManagerDefault {
     init(filename: String) {
         self.filename = filename
 
-        let cachesDirUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let cachesDirUrl = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
         super.init(logsDirectory: cachesDirUrl.path)
     }
     
@@ -81,7 +85,7 @@ private class SimpleTracingFormatter: NSObject, DDLogFormatter {
     
     private func headerFormat(message: DDLogMessage) -> String {
         let timestamp = SimpleTracingFormatter.timeFormatter.string(from: message.timestamp)
-        return "\n\(timestamp)  ----- \(message.message ?? "") -----\n"
+        return "\n\(timestamp)  ----- \(message.message ?? "") -----\n\n"
     }
     
     private func trailingPathComponent(_ input: String?) -> String? {
