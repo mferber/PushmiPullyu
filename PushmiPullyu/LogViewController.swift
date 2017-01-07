@@ -17,7 +17,7 @@ class LogViewController: UIViewController {
     
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    private var reloadTimer: Timer!
     
     // MARK: - Properties: @IBOutlet
     
@@ -33,18 +33,16 @@ class LogViewController: UIViewController {
         super.viewDidLoad()
         
         self.loadLog()
+        self.reloadTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLog),
+                                                userInfo: nil, repeats: true)
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    
     // MARK: - Methods
     
     
-    private func loadLog() {
+    @objc private func loadLog() {
         guard let logPath = appDelegate.loggerManager.mainLogger?.logPath else { return }
      
         do {
