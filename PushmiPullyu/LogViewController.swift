@@ -13,10 +13,19 @@ import CocoaLumberjackSwift
 class LogViewController: UIViewController {
     
     
+    // MARK: - Properties: static
+    
+    
+    private struct Const {
+        static let refreshInterval: TimeInterval = 1.0
+    }
+    
+    
     // MARK: - Properties: private
     
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private var loggerManager: LoggerManager!
     private var reloadTimer: Timer!
     
     // MARK: - Properties: @IBOutlet
@@ -28,14 +37,44 @@ class LogViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    
+    override init(nibName: String?, bundle: Bundle?) {
+        super.init(nibName: nibName, bundle: bundle)
+        
+        self.logViewControllerSharedInit()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.logViewControllerSharedInit()
+    }
+    
+    
+    private func logViewControllerSharedInit() {
+        self.loggerManager = self.appDelegate.loggerManager
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.loadLog()
-        self.reloadTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLog),
-                                                userInfo: nil, repeats: true)
-
+        self.reloadTimer = Timer.scheduledTimer(timeInterval: Const.refreshInterval,
+                                                target: self,
+                                                selector: #selector(loadLog),
+                                                userInfo: nil,
+                                                repeats: true)
+    }
+    
+    
+    // MARK: - Event handlers
+    
+    
+    @IBAction private func clearButtonTapped() {
+        self.loggerManager.clearLog()
+        self.textView.text = ""
     }
 
 
@@ -49,7 +88,10 @@ class LogViewController: UIViewController {
             let text = try String(contentsOfFile: logPath, encoding: .utf8)
             self.textView.text = text
         } catch {
-            DDLogWarn("Can't read log file: \(error)")
+            // Probably the logger just hasn't written anything to the log yet, especially if it was just
+            // cleared.  No need to log that.  (Better to test the error type, but that's out of scope for
+            // now.)
+            // DDLogWarn("Can't read log file: \(error)")
         }
     }
 

@@ -31,13 +31,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pushmi-Pullyu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-aq-2ZG">
-                                <rect key="frame" x="126" y="22" width="166.5" height="27.5"/>
+                                <rect key="frame" x="126" y="22" width="167" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notification test bed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5j-pQ-qet">
-                                <rect key="frame" x="126" y="49.5" width="195.5" height="21"/>
+                                <rect key="frame" x="126" y="50" width="196" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,6 +45,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7r-N1-yeu">
                                 <rect key="frame" x="126" y="92" width="88" height="30"/>
                                 <state key="normal" title="Clear the log"/>
+                                <connections>
+                                    <action selector="clearButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="8HC-tn-Rf0"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Dummy test here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TVb-4b-EU7">
                                 <rect key="frame" x="16" y="132" width="343" height="533"/>
@@ -52,11 +55,20 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="9"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cantina-logo" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-WP-aeh">
+                                <rect key="frame" x="314" y="85" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="GWD-zp-84s"/>
+                                    <constraint firstAttribute="width" secondItem="VVH-WP-aeh" secondAttribute="height" multiplier="1:1" id="LF0-76-s6N"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="xQ1-nh-gpb" secondAttribute="leading" id="06P-cs-Ufg"/>
                             <constraint firstItem="b5j-pQ-qet" firstAttribute="leading" secondItem="2ff-aq-2ZG" secondAttribute="leading" id="4RW-5W-9ZX"/>
+                            <constraint firstItem="VVH-WP-aeh" firstAttribute="centerY" secondItem="w7r-N1-yeu" secondAttribute="centerY" id="9qC-9a-2zL"/>
+                            <constraint firstItem="VVH-WP-aeh" firstAttribute="trailing" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="AAF-9e-QAb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="EJ7-e5-zRD"/>
                             <constraint firstItem="w7r-N1-yeu" firstAttribute="bottom" secondItem="xQ1-nh-gpb" secondAttribute="bottom" id="EPH-2L-RCY"/>
                             <constraint firstItem="w7r-N1-yeu" firstAttribute="leading" secondItem="2ff-aq-2ZG" secondAttribute="leading" id="NH6-6n-vc7"/>
@@ -80,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cantina-logo" width="45" height="45"/>
         <image name="pushmipullyu-illustration" width="250" height="249"/>
     </resources>
 </document>

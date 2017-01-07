@@ -6,15 +6,33 @@
 //  Copyright © 2017 Cantina. All rights reserved.
 //
 
-import CocoaLumberjack
+import CocoaLumberjackSwift
 
 class LoggerManager {
     var mainLogger: MainLogger?
     
     init() {
-        self.mainLogger = MainLogger()
-        
         DDLog.add(DDTTYLogger.sharedInstance())
+        self.setUpMainLogger()
+    }
+    
+    func clearLog() {
+        DDLog.remove(self.mainLogger)
+        self.mainLogger = nil
+        
+        if let logPath = self.mainLogger?.logPath {
+            do {
+                try FileManager.default.removeItem(atPath: logPath)
+            } catch {
+                DDLogWarn("Error trying to delete log file at \(logPath): \(error)")
+            }
+        }
+        
+        self.setUpMainLogger()
+    }
+    
+    private func setUpMainLogger() {
+        self.mainLogger = MainLogger()
         DDLog.add(self.mainLogger)
     }
 }
