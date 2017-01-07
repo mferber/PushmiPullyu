@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3952F0931E2068EF006F8A91"
+               BuildableName = "PushmiPullyu.app"
+               BlueprintName = "PushmiPullyu"
+               ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3952F0A71E2068EF006F8A91"
+               BuildableName = "PushmiPullyuTests.xctest"
+               BlueprintName = "PushmiPullyuTests"
+               ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3952F0B21E2068EF006F8A91"
+               BuildableName = "PushmiPullyuUITests.xctest"
+               BlueprintName = "PushmiPullyuUITests"
+               ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3952F0931E2068EF006F8A91"
+            BuildableName = "PushmiPullyu.app"
+            BlueprintName = "PushmiPullyu"
+            ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3952F0931E2068EF006F8A91"
+            BuildableName = "PushmiPullyu.app"
+            BlueprintName = "PushmiPullyu"
+            ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3952F0931E2068EF006F8A91"
+            BuildableName = "PushmiPullyu.app"
+            BlueprintName = "PushmiPullyu"
+            ReferencedContainer = "container:PushmiPullyu.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

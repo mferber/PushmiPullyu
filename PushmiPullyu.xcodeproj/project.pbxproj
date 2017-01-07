@@ -14,6 +14,8 @@
 		3952F0A21E2068EF006F8A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3952F0A01E2068EF006F8A91 /* LaunchScreen.storyboard */; };
 		3952F0AD1E2068EF006F8A91 /* PushmiPullyuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0AC1E2068EF006F8A91 /* PushmiPullyuTests.swift */; };
 		3952F0B81E2068EF006F8A91 /* PushmiPullyuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952F0B71E2068EF006F8A91 /* PushmiPullyuUITests.swift */; };
+		3952F0C61E20758E006F8A91 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */; };
+		3952F0C71E20758E006F8A91 /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3952F0C81E20758E006F8A91 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3952F0C71E20758E006F8A91 /* CocoaLumberjackSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3952F0941E2068EF006F8A91 /* PushmiPullyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushmiPullyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3952F0971E2068EF006F8A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +63,9 @@
 		3952F0B31E2068EF006F8A91 /* PushmiPullyuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushmiPullyuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3952F0B71E2068EF006F8A91 /* PushmiPullyuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushmiPullyuUITests.swift; sourceTree = "<group>"; };
 		3952F0B91E2068EF006F8A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		3952F0CA1E2075BC006F8A91 /* CocoaLumberjackSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjackSwift.framework.dSYM; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework.dSYM; sourceTree = "<group>"; };
+		3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3952F0C61E20758E006F8A91 /* CocoaLumberjackSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +97,9 @@
 		3952F08B1E2068EF006F8A91 = {
 			isa = PBXGroup;
 			children = (
+				3952F0CD1E207BF2006F8A91 /* CocoaLumberjack.framework */,
+				3952F0CA1E2075BC006F8A91 /* CocoaLumberjackSwift.framework.dSYM */,
+				3952F0C51E20758E006F8A91 /* CocoaLumberjackSwift.framework */,
 				3952F0961E2068EF006F8A91 /* PushmiPullyu */,
 				3952F0AB1E2068EF006F8A91 /* PushmiPullyuTests */,
 				3952F0B61E2068EF006F8A91 /* PushmiPullyuUITests */,
@@ -135,6 +158,8 @@
 				3952F0901E2068EF006F8A91 /* Sources */,
 				3952F0911E2068EF006F8A91 /* Frameworks */,
 				3952F0921E2068EF006F8A91 /* Resources */,
+				3952F0C81E20758E006F8A91 /* Embed Frameworks */,
+				3952F0CC1E2075EC006F8A91 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +281,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3952F0CC1E2075EC006F8A91 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaLumberjackSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaLumberjack.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3952F0901E2068EF006F8A91 /* Sources */ = {
@@ -416,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X36WARALG4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PushmiPullyu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.cantina.test.PushmiPullyu;
@@ -429,6 +476,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X36WARALG4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PushmiPullyu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.cantina.test.PushmiPullyu;
@@ -514,6 +565,7 @@
 				3952F0BE1E2068EF006F8A91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3952F0BF1E2068EF006F8A91 /* Build configuration list for PBXNativeTarget "PushmiPullyuTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +574,7 @@
 				3952F0C11E2068EF006F8A91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3952F0C21E2068EF006F8A91 /* Build configuration list for PBXNativeTarget "PushmiPullyuUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +583,7 @@
 				3952F0C41E2068EF006F8A91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
