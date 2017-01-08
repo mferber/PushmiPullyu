@@ -82,6 +82,11 @@ class LogViewController: UIViewController {
         abort()
     }
 
+    
+    @IBAction private func cantinaLogoButtonTapped() {
+        guard let url = URL(string: "http://cantina.co") else { return }
+        UIApplication.shared.openURL(url)
+    }
 
     // MARK: - Methods
     

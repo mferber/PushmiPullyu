@@ -23,6 +23,9 @@ The token is also displayed on the app's own log screen, but it's easier to copy
 
 If you try force-quitting this app and then sending it a background notification (with `"content-available": 1` in the payload, it will fail, because Apple's policy is to [block background execution in apps that the user has force-quit](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html#//apple_ref/doc/uid/TP40007072-CH4-SW7).  Therefore, to support testing this case, the app has a "Force quit" button that causes the app to immediately crash and terminate.  That doesn't count as a user-driven force-quit, so background notifications will still be handled.
 
+## What's a “pushmi-pullyu”?
+
+You obviously didn't read enough [_Doctor Dolittle_](https://en.wikipedia.org/wiki/List_of_Doctor_Dolittle_characters#The_pushmi-pullyu) when you were younger.
 
 ---
 

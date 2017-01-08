@@ -69,6 +69,12 @@
                                     <action selector="forceQuitButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vwh-Ae-ePI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5da-yJ-4hv">
+                                <rect key="frame" x="329" y="22" width="30" height="30"/>
+                                <connections>
+                                    <action selector="cantinaLogoButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="fza-1a-dcx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,13 +83,17 @@
                             <constraint firstItem="VVH-WP-aeh" firstAttribute="trailing" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="AAF-9e-QAb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="EJ7-e5-zRD"/>
                             <constraint firstItem="w7r-N1-yeu" firstAttribute="bottom" secondItem="xQ1-nh-gpb" secondAttribute="bottom" id="EPH-2L-RCY"/>
+                            <constraint firstItem="5da-yJ-4hv" firstAttribute="centerY" secondItem="VVH-WP-aeh" secondAttribute="centerY" id="G7N-wI-Hzh"/>
                             <constraint firstItem="VVH-WP-aeh" firstAttribute="top" secondItem="xQ1-nh-gpb" secondAttribute="top" id="M7H-g4-VTC"/>
                             <constraint firstItem="w7r-N1-yeu" firstAttribute="leading" secondItem="2ff-aq-2ZG" secondAttribute="leading" id="NH6-6n-vc7"/>
+                            <constraint firstItem="5da-yJ-4hv" firstAttribute="centerX" secondItem="VVH-WP-aeh" secondAttribute="centerX" id="Qgn-CB-pbp"/>
                             <constraint firstItem="2ff-aq-2ZG" firstAttribute="top" secondItem="xQ1-nh-gpb" secondAttribute="top" id="SFy-NG-xZS"/>
                             <constraint firstItem="TVb-4b-EU7" firstAttribute="top" secondItem="xQ1-nh-gpb" secondAttribute="bottom" constant="10" id="TVJ-3q-nTC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVb-4b-EU7" secondAttribute="bottom" constant="2" id="VaW-vF-Mvr"/>
                             <constraint firstItem="2ff-aq-2ZG" firstAttribute="leading" secondItem="xQ1-nh-gpb" secondAttribute="trailing" constant="10" id="YmO-dh-hZw"/>
                             <constraint firstItem="1P8-h6-dWZ" firstAttribute="trailing" secondItem="TVb-4b-EU7" secondAttribute="trailing" id="fX7-bc-In7"/>
+                            <constraint firstItem="5da-yJ-4hv" firstAttribute="width" secondItem="VVH-WP-aeh" secondAttribute="width" id="gNK-sq-6JE"/>
+                            <constraint firstItem="5da-yJ-4hv" firstAttribute="height" secondItem="VVH-WP-aeh" secondAttribute="height" id="hoh-J5-aik"/>
                             <constraint firstItem="1P8-h6-dWZ" firstAttribute="centerY" secondItem="w7r-N1-yeu" secondAttribute="centerY" id="mHI-hG-yHM"/>
                             <constraint firstItem="b5j-pQ-qet" firstAttribute="top" secondItem="2ff-aq-2ZG" secondAttribute="bottom" id="qRI-Ye-O00"/>
                             <constraint firstItem="xQ1-nh-gpb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="yoB-fc-mL1"/>
