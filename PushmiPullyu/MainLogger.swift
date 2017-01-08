@@ -16,7 +16,8 @@ import CocoaLumberjackSwift
 class MainLogger: DDFileLogger {
     
     static let filename = "log.txt"
-    static let archivedFilename = "log.archived.txt"
+    static let matchingFilePrefix = "log"
+    static let matchingFileSuffix = ".txt"
     
     var logDirectory: String {
         return self.logFileManager.logsDirectory
@@ -26,10 +27,6 @@ class MainLogger: DDFileLogger {
         return (self.logDirectory as NSString).appendingPathComponent(MainLogger.filename)
     }
     
-    var archivedLogPath: String {
-        return (self.logDirectory as NSString).appendingPathComponent(MainLogger.archivedFilename)
-    }
-
     
     init() {
         super.init(logFileManager: SingleLogCacheFileManager(filename: MainLogger.filename))
