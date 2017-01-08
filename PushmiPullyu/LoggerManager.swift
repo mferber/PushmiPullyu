@@ -18,7 +18,6 @@ class LoggerManager {
     
     func clearLog() {
         DDLog.remove(self.mainLogger)
-        self.mainLogger = nil
         
         if let logPath = self.mainLogger?.logPath {
             do {
@@ -28,6 +27,7 @@ class LoggerManager {
             }
         }
         
+        self.mainLogger = nil
         self.setUpMainLogger()
     }
     
