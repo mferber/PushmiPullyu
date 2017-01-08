@@ -92,24 +92,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func logLaunchFromNotification(_ notification: NSDictionary) {
-        DDLogInfo("App launched from tapped notification:\n\(notification)")
+        DDLogInfo("App launched from tapped notification:\n\(prettyJSONFor(notification))")
     }
     
     private func logReceivedNotification(_ notification: [AnyHashable: Any], appState: UIApplicationState) {
-        DDLogInfo("App received notification while \(appStateDescription(appState)):\n\(notification)")
+        DDLogInfo("App received notification while \(appStateDescription(appState)):\n\(prettyJSONFor(notification))")
     }
     
     
     // MARK: - Utilities
     
     
+    /**
+     Converts the given object to pretty-printed JSON, if possible; otherwise, returns the default
+     String representation of the object.
+     */
+    private func prettyJSONFor(_ object: Any) -> String {
+        var output: String? = nil
+        if JSONSerialization.isValidJSONObject(object) {
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted])
+                output = String(data: jsonData, encoding: .utf8)
+            } catch {
+                // fall through
+            }
+        }
+        return output ?? "\(object)"
+    }
+
     private func appStateDescription(_ appState: UIApplicationState) -> String {
         switch appState {
         case .active: return "in the foreground"
         case .inactive: return "in the foreground (inactive)"
         case .background: return "in the background"
         }
-
     }
     
 }
