@@ -15,15 +15,21 @@ import CocoaLumberjackSwift
  */
 class MainLogger: DDFileLogger {
     
-    public static let filename = "log.txt"
+    static let filename = "log.txt"
+    static let archivedFilename = "log.archived.txt"
     
-    public var logDirectory: String {
+    var logDirectory: String {
         return self.logFileManager.logsDirectory
     }
     
-    public var logPath: String {
+    var logPath: String {
         return (self.logDirectory as NSString).appendingPathComponent(MainLogger.filename)
     }
+    
+    var archivedLogPath: String {
+        return (self.logDirectory as NSString).appendingPathComponent(MainLogger.archivedFilename)
+    }
+
     
     init() {
         super.init(logFileManager: SingleLogCacheFileManager(filename: MainLogger.filename))
@@ -78,9 +84,9 @@ private class SimpleTracingFormatter: NSObject, DDLogFormatter {
     
     private func normalFormat(message: DDLogMessage) -> String {
         let timestamp = SimpleTracingFormatter.timeFormatter.string(from: message.timestamp)
-        let filename = self.trailingPathComponent(message.file)
+        let filename = (message.file as NSString).lastPathComponent
         
-        return "\(timestamp)  \(message.message ?? "")\n(\(filename ?? "unknown file"): \(message.function ?? "unknown function"))\n\n"
+        return "\(timestamp)  \(message.message ?? "")\n(\(filename): \(message.function ?? "unknown function")))\n\n"
     }
     
     private func headerFormat(message: DDLogMessage) -> String {
@@ -88,19 +94,4 @@ private class SimpleTracingFormatter: NSObject, DDLogFormatter {
         return "\n\(timestamp)  ----- \(message.message ?? "") -----\n\n"
     }
     
-    private func trailingPathComponent(_ input: String?) -> String? {
-        guard let input = input else { return nil }
-        
-        let chars = input.characters
-        var pos = chars.endIndex
-        while pos > chars.startIndex {
-            pos = chars.index(before: pos)
-            if chars[pos] == "/" {
-                pos = chars.index(after: pos)
-                break
-            }
-        }
-        return input.substring(from: pos)
-    }
-
 }

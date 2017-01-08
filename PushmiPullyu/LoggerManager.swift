@@ -17,18 +17,23 @@ class LoggerManager {
     }
     
     func clearLog() {
-        DDLog.remove(self.mainLogger)
+        let archivedLogPath = self.mainLogger?.archivedLogPath
         
-        if let logPath = self.mainLogger?.logPath {
-            do {
-                try FileManager.default.removeItem(atPath: logPath)
-            } catch {
-                DDLogWarn("Error trying to delete log file at \(logPath): \(error)")
+        DDLog.remove(self.mainLogger)
+        self.mainLogger = nil
+        
+        self.setUpMainLogger()
+        
+        // stopping the logger causes the log file to be archived; we don't need that
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            if let archivedLogPath = archivedLogPath {
+                do {
+                    try FileManager.default.removeItem(atPath: archivedLogPath)
+                } catch {
+                    DDLogWarn("Error trying to delete archived log file at \(archivedLogPath): \(error)")
+                }
             }
         }
-        
-        self.mainLogger = nil
-        self.setUpMainLogger()
     }
     
     private func setUpMainLogger() {
