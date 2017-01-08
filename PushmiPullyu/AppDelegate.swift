@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.initiatePushRegistration(application: application)
         
+        if let launchNotification = launchOptions?[.remoteNotification] as? NSDictionary {
+            self.logLaunchFromNotification(launchNotification)
+        }
+        
         return true
     }
 
@@ -69,6 +73,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         NSLog("Push notification error:\n\nFailed to register for remote notifications: \(error.localizedDescription)\n\n")
+    }
+    
+    
+    // MARK: - Push handler
+    
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
+    {
+        self.logReceivedNotification(userInfo, appState: application.applicationState)
+        completionHandler(.noData)
+    }
+
+    
+    // MARK: - Event logging
+    
+    
+    private func logLaunchFromNotification(_ notification: NSDictionary) {
+        DDLogInfo("App launched from tapped notification:\n\(notification)")
+    }
+    
+    private func logReceivedNotification(_ notification: [AnyHashable: Any], appState: UIApplicationState) {
+        DDLogInfo("App received notification while \(appStateDescription(appState)):\n\(notification)")
+    }
+    
+    
+    // MARK: - Utilities
+    
+    
+    private func appStateDescription(_ appState: UIApplicationState) -> String {
+        switch appState {
+        case .active: return "in the foreground"
+        case .inactive: return "in the foreground (inactive)"
+        case .background: return "in the background"
+        }
+
     }
     
 }
