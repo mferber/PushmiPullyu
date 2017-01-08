@@ -76,6 +76,11 @@ class LogViewController: UIViewController {
         self.loggerManager.clearLog()
         self.textView.text = ""
     }
+    
+    
+    @IBAction private func forceQuitButtonTapped() {
+        abort()
+    }
 
 
     // MARK: - Methods

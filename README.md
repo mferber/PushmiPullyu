@@ -19,8 +19,13 @@ To obtain the device push token, run the app from Xcode, with the device attache
 
 The token is also displayed on the app's own log screen, but it's easier to copy and paste it from the Xcode log than to copy it manually.
 
+### "Force quit" and background notifications
+
+If you try force-quitting this app and then sending it a background notification (with `"content-available": 1` in the payload, it will fail, because Apple's policy is to [block background execution in apps that the user has force-quit](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html#//apple_ref/doc/uid/TP40007072-CH4-SW7).  Therefore, to support testing this case, the app has a "Force quit" button that causes the app to immediately crash and terminate.  That doesn't count as a user-driven force-quit, so background notifications will still be handled.
+
+
 ---
 
-App by Matthias Ferber, Cantina Consulting, Inc.
+Author: Matthias Ferber, Cantina Consulting, Inc.
 
 http://cantina.co
