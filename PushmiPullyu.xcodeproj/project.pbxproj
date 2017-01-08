@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		392CED6F1E22E41F005C0D90 /* PushmiPullyu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushmiPullyu.entitlements; sourceTree = "<group>"; };
 		3952F0941E2068EF006F8A91 /* PushmiPullyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushmiPullyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3952F0971E2068EF006F8A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3952F0991E2068EF006F8A91 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		3952F0961E2068EF006F8A91 /* PushmiPullyu */ = {
 			isa = PBXGroup;
 			children = (
+				392CED6F1E22E41F005C0D90 /* PushmiPullyu.entitlements */,
 				3952F09B1E2068EF006F8A91 /* Main.storyboard */,
 				3952F0971E2068EF006F8A91 /* AppDelegate.swift */,
 				3952F0991E2068EF006F8A91 /* LogViewController.swift */,
@@ -245,6 +247,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X36WARALG4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					3952F0A71E2068EF006F8A91 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -486,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushmiPullyu/PushmiPullyu.entitlements;
 				DEVELOPMENT_TEAM = X36WARALG4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushmiPullyu/PushmiPullyu.entitlements;
 				DEVELOPMENT_TEAM = X36WARALG4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

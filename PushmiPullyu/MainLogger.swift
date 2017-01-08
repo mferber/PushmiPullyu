@@ -88,7 +88,7 @@ private class SimpleTracingFormatter: NSObject, DDLogFormatter {
     
     private func headerFormat(message: DDLogMessage) -> String {
         let timestamp = SimpleTracingFormatter.timeFormatter.string(from: message.timestamp)
-        return "\n\(timestamp)  ----- \(message.message ?? "") -----\n\n"
+        return "\n\(timestamp)  ----- \(message.message ?? "")\n\n"
     }
     
 }
